@@ -1,0 +1,619 @@
+FORMAT  w tck tms tdi tdo 
+R100    w  0   0   0   0   ; // Wait
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // JTAG_CMD: jtag_test_req          
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle 
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // Run-Test-Idle  --> Select-DR-Scan
+R1      w  1   1   0   X   ;
+R1      w  0   1   0   X   ; // Select-DR-Scan --> Select-IR-Scan
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Select-IR-Scan --> Capture-IR    
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Capture-IR     --> Shift-IR      
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // IR[0]      
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // IR[1]      
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // IR[2]      
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // IR[3]      
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // IR[4]      
+R1      w  1   0   1   X   ;
+R1      w  0   1   1   X   ; // IR[5]      
+R1      w  1   1   1   X   ;
+R1      w  0   1   0   X   ; // Exit1-IR       --> Update-IR     
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Update-IR      --> Run-Test-Idle 
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle 
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR_SEND  : 0000_0000           
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle 
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // Run-Test-Idle  --> Select-DR-Scan
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Select-DR-Scan --> Capture-DR    
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Capture-DR     --> Shift-DR      
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[31]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[30]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[29]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[28]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[27]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[26]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[25]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[24]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[23]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[22]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[21]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[20]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[19]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[18]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[17]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[16]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[15]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[14]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[13]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[12]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[11]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[10]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[9]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[8]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[7]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[6]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[5]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[4]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[3]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[2]
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // DR[1]
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // DR[0]
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // Exit1-DR       --> Update-DR
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Update-DR      --> Run-Test-Idle
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR_SEND  : 0000_0000           
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle 
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // Run-Test-Idle  --> Select-DR-Scan
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Select-DR-Scan --> Capture-DR    
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Capture-DR     --> Shift-DR      
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[31]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[30]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[29]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[28]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[27]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[26]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[25]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[24]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[23]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[22]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[21]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[20]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[19]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[18]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[17]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[16]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[15]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[14]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[13]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[12]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[11]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[10]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[9]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[8]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[7]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[6]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[5]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[4]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[3]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[2]
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // DR[1]
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // DR[0]
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // Exit1-DR       --> Update-DR
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Update-DR      --> Run-Test-Idle
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle
+R1      w  1   0   0   X   ;
+R100    w  0   0   0   0   ; // Wait
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // JTAG_CMD: jtag_read_expect          
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle 
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // Run-Test-Idle  --> Select-DR-Scan
+R1      w  1   1   0   X   ;
+R1      w  0   1   0   X   ; // Select-DR-Scan --> Select-IR-Scan
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Select-IR-Scan --> Capture-IR    
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Capture-IR     --> Shift-IR      
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // IR[0]      
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // IR[1]      
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // IR[2]      
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // IR[3]      
+R1      w  1   0   1   X   ;
+R1      w  0   0   0   X   ; // IR[4]      
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // IR[5]      
+R1      w  1   1   0   X   ;
+R1      w  0   1   0   X   ; // Exit1-IR       --> Update-IR     
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Update-IR      --> Run-Test-Idle 
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle 
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR_SEND  : 32'h0012_0023           
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle 
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // Run-Test-Idle  --> Select-DR-Scan
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Select-DR-Scan --> Capture-DR    
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Capture-DR     --> Shift-DR      
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // DR[31]
+R1      w  1   0   1   X   ;
+R1      w  0   0   1   X   ; // DR[30]
+R1      w  1   0   1   X   ;
+R1      w  0   0   0   X   ; // DR[29]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[28]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[27]
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // DR[26]
+R1      w  1   0   1   X   ;
+R1      w  0   0   0   X   ; // DR[25]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[24]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[23]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[22]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[21]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[20]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[19]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[18]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[17]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[16]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[15]
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // DR[14]
+R1      w  1   0   1   X   ;
+R1      w  0   0   0   X   ; // DR[13]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[12]
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // DR[11]
+R1      w  1   0   1   X   ;
+R1      w  0   0   0   X   ; // DR[10]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[9]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[8]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[7]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[6]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[5]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[4]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[3]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[2]
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // DR[1]
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // DR[0]
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // Exit1-DR       --> Update-DR
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Update-DR      --> Run-Test-Idle
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR_SEND  : 32'h0012_0023           
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR_EXPECT: 32'hffff_ffff       
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle 
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // Run-Test-Idle  --> Select-DR-Scan
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Select-DR-Scan --> Capture-DR    
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Capture-DR     --> Shift-DR      
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // DR[31]
+R1      w  1   0   1   H   ;
+R1      w  0   0   1   X   ; // DR[30]
+R1      w  1   0   1   H   ;
+R1      w  0   0   0   X   ; // DR[29]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[28]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[27]
+R1      w  1   0   0   H   ;
+R1      w  0   0   1   X   ; // DR[26]
+R1      w  1   0   1   H   ;
+R1      w  0   0   0   X   ; // DR[25]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[24]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[23]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[22]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[21]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[20]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[19]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[18]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[17]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[16]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[15]
+R1      w  1   0   0   H   ;
+R1      w  0   0   1   X   ; // DR[14]
+R1      w  1   0   1   H   ;
+R1      w  0   0   0   X   ; // DR[13]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[12]
+R1      w  1   0   0   H   ;
+R1      w  0   0   1   X   ; // DR[11]
+R1      w  1   0   1   H   ;
+R1      w  0   0   0   X   ; // DR[10]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[9]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[8]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[7]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[6]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[5]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[4]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[3]
+R1      w  1   0   0   H   ;
+R1      w  0   0   0   X   ; // DR[2]
+R1      w  1   0   0   H   ;
+R1      w  0   1   0   X   ; // DR[1]
+R1      w  1   1   0   H   ;
+R1      w  0   0   0   X   ; // DR[0]
+R1      w  1   0   0   H   ;
+R1      w  0   1   0   X   ; // Exit1-DR       --> Update-DR
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Update-DR      --> Run-Test-Idle
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle
+R1      w  1   0   0   X   ;
+R100    w  0   0   0   0   ; // Wait
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // JTAG_CMD: jtag_write_single          
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle 
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // Run-Test-Idle  --> Select-DR-Scan
+R1      w  1   1   0   X   ;
+R1      w  0   1   0   X   ; // Select-DR-Scan --> Select-IR-Scan
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Select-IR-Scan --> Capture-IR    
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Capture-IR     --> Shift-IR      
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // IR[0]      
+R1      w  1   0   1   X   ;
+R1      w  0   0   0   X   ; // IR[1]      
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // IR[2]      
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // IR[3]      
+R1      w  1   0   1   X   ;
+R1      w  0   0   0   X   ; // IR[4]      
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // IR[5]      
+R1      w  1   1   0   X   ;
+R1      w  0   1   0   X   ; // Exit1-IR       --> Update-IR     
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Update-IR      --> Run-Test-Idle 
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle 
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR_SEND  : 32'd0012_0023           
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle 
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // Run-Test-Idle  --> Select-DR-Scan
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Select-DR-Scan --> Capture-DR    
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Capture-DR     --> Shift-DR      
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // DR[31]
+R1      w  1   0   1   X   ;
+R1      w  0   0   1   X   ; // DR[30]
+R1      w  1   0   1   X   ;
+R1      w  0   0   1   X   ; // DR[29]
+R1      w  1   0   1   X   ;
+R1      w  0   0   0   X   ; // DR[28]
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // DR[27]
+R1      w  1   0   1   X   ;
+R1      w  0   0   0   X   ; // DR[26]
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // DR[25]
+R1      w  1   0   1   X   ;
+R1      w  0   0   1   X   ; // DR[24]
+R1      w  1   0   1   X   ;
+R1      w  0   0   0   X   ; // DR[23]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[22]
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // DR[21]
+R1      w  1   0   1   X   ;
+R1      w  0   0   0   X   ; // DR[20]
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // DR[19]
+R1      w  1   0   1   X   ;
+R1      w  0   0   0   X   ; // DR[18]
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // DR[17]
+R1      w  1   0   1   X   ;
+R1      w  0   0   1   X   ; // DR[16]
+R1      w  1   0   1   X   ;
+R1      w  0   0   1   X   ; // DR[15]
+R1      w  1   0   1   X   ;
+R1      w  0   0   0   X   ; // DR[14]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[13]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[12]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[11]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[10]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[9]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[8]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[7]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[6]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[5]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[4]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[3]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[2]
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // DR[1]
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // DR[0]
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // Exit1-DR       --> Update-DR
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Update-DR      --> Run-Test-Idle
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ;
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR_SEND  : 32'h0000040D           
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle 
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // Run-Test-Idle  --> Select-DR-Scan
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Select-DR-Scan --> Capture-DR    
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Capture-DR     --> Shift-DR      
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // DR[31]
+R1      w  1   0   1   X   ;
+R1      w  0   0   0   X   ; // DR[30]
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // DR[29]
+R1      w  1   0   1   X   ;
+R1      w  0   0   1   X   ; // DR[28]
+R1      w  1   0   1   X   ;
+R1      w  0   0   0   X   ; // DR[27]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[26]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[25]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[24]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[23]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[22]
+R1      w  1   0   0   X   ;
+R1      w  0   0   1   X   ; // DR[21]
+R1      w  1   0   1   X   ;
+R1      w  0   0   0   X   ; // DR[20]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[19]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[18]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[17]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[16]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[15]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[14]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[13]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[12]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[11]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[10]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[9]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[8]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[7]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[6]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[5]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[4]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[3]
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // DR[2]
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // DR[1]
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // DR[0]
+R1      w  1   0   0   X   ;
+R1      w  0   1   0   X   ; // Exit1-DR       --> Update-DR
+R1      w  1   1   0   X   ;
+R1      w  0   0   0   X   ; // Update-DR      --> Run-Test-Idle
+R1      w  1   0   0   X   ;
+R1      w  0   0   0   X   ; // Run-Test-Idle  --> Run-Test-Idle
+R1      w  1   0   0   X   ;
+R100    w  0   0   0   0   ; // Wait
